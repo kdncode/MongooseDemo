@@ -67,5 +67,4 @@ router.post('/new', function(req, res, next) {
   res.redirect('/view')
 });
 
-
 module.exports = router;
