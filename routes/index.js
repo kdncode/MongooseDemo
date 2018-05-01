@@ -14,4 +14,13 @@ router.get('/view', function(req, res, next) {
   })
 });
 
+/* DELETE data in View page. */
+router.get('/delete/:deleteid', function(req, res, next) {
+  var id = req.params.deleteid;
+  contactModel.findByIdAndRemove(id).exec();
+
+  res.redirect('/view');
+
+});
+
 module.exports = router;
