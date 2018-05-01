@@ -23,7 +23,7 @@ router.get('/delete/:deleteid', function(req, res, next) {
 
 });
 
-/* UPDATE data in View page. */
+/* UPDATE data in Update page. */
 router.get('/update/:updateid', function(req, res, next) {
   var id2 = req.params.updateid;
   contactModel.find({_id : id2}, function(err, data) {
@@ -31,7 +31,7 @@ router.get('/update/:updateid', function(req, res, next) {
   });
 });
 
-/* POST to update data in View page. */
+/* POST to update data in Update page. */
 router.post('/update/:updateid', function(req, res, next) {
   var id2 = req.params.updateid;
 
@@ -43,7 +43,29 @@ router.post('/update/:updateid', function(req, res, next) {
     data.save();
     res.redirect('/view')
   })
-  
 });
+
+/* CREATE data in new page. */
+router.get('/new', function(req, res, next) {
+  res.render('new', { title: "Create"})
+});
+
+/* CREATE data in new page. */
+router.get('/new', function(req, res, next) {
+  res.render('new', { title: "Create"})
+});
+
+/* POST - CREATE data in new page. */
+router.post('/new', function(req, res, next) {
+  var newItem = {
+    'name' : req.body.name,
+    'age' : req.body.age
+  }
+
+  var newData = new contactModel(newItem);
+  newData.save();
+  res.redirect('/view')
+});
+
 
 module.exports = router;
