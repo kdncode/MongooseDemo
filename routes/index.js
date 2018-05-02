@@ -47,12 +47,7 @@ router.post('/update/:updateid', function(req, res, next) {
 
 /* CREATE data in new page. */
 router.get('/new', function(req, res, next) {
-  res.render('new', { title: "Create"})
-});
-
-/* CREATE data in new page. */
-router.get('/new', function(req, res, next) {
-  res.render('new', { title: "Create"})
+  res.render('new', { title: "Create new data"})
 });
 
 /* POST - CREATE data in new page. */
