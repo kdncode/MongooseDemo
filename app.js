@@ -10,7 +10,6 @@ var usersRouter = require('./routes/users');
 // getting-started.js
 var mongoose = require('mongoose');
 
-
 var app = express();
 
 mongoose.connect('mongodb://localhost/mongoosedemo');
