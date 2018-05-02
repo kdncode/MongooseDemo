@@ -18,9 +18,7 @@ router.get('/view', function(req, res, next) {
 router.get('/delete/:deleteid', function(req, res, next) {
   var id = req.params.deleteid;
   contactModel.findByIdAndRemove(id).exec();
-
   res.redirect('/view');
-
 });
 
 /* UPDATE GET data in Update page. */
